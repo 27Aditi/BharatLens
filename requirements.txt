@@ -4,6 +4,7 @@ pandas
 numpy
 plotly
 requests
+torchvision
 transformers
 torch
 scikit-learn
