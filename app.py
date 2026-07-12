@@ -414,7 +414,7 @@ with tab1:
             legend=dict(bgcolor="rgba(0,0,0,0)", font=dict(color="#94a3b8", size=11)),
             showlegend=True,
         )
-        st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+        st.plotly_chart(fig, width='stretch', config={"displayModeBar": False})
 
 
 with tab2:
@@ -481,7 +481,7 @@ with tab2:
             legend=dict(bgcolor="rgba(15,23,42,0.8)", font=dict(color="#94a3b8", size=11),
                         bordercolor="rgba(255,255,255,0.06)", borderwidth=1),
         )
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(fig2, width='stretch')
 
         c1, c2 = st.columns(2)
         with c1:
@@ -503,12 +503,12 @@ with tab2:
                     margin=dict(l=10, r=10, t=10, b=10),
                     xaxis=dict(**GRID), yaxis=dict(**GRID),
                     legend=dict(bgcolor="rgba(0,0,0,0)"))
-                st.plotly_chart(fig_l, use_container_width=True, config={"displayModeBar":False})
+                st.plotly_chart(fig_l, width='stretch', config={"displayModeBar":False})
         with c2:
             with st.expander("📋  Forecast Table"):
                 st.dataframe(
                     future_df.style.format({"Predicted":"₹{:,.0f}","Upper":"₹{:,.0f}","Lower":"₹{:,.0f}"}),
-                    use_container_width=True,
+                    width='stretch',
                 )
     else:
         st.info("👆 Click the button above to train the LSTM and generate a forecast.")
@@ -576,7 +576,7 @@ with tab3:
                 height=220,
                 margin=dict(l=10, r=80, t=20, b=10),
                 legend=dict(bgcolor="rgba(0,0,0,0)", font=dict(color="#94a3b8", size=11)))
-            st.plotly_chart(fig_pie, use_container_width=True, config={"displayModeBar":False})
+            st.plotly_chart(fig_pie, width='stretch', config={"displayModeBar":False})
 
         st.markdown("<div class='sec-head'><div class='sec-head-icon'>📄</div>Article Feed<div class='sec-head-line'></div></div>", unsafe_allow_html=True)
         for art in enriched:
@@ -623,7 +623,7 @@ with tab4:
         xaxis=dict(**GRID, color="#475569", range=[0, 110]),
         yaxis=dict(color="#e2e8f0", autorange="reversed", tickfont=dict(size=12))
     )
-    st.plotly_chart(fig_s, use_container_width=True)
+    st.plotly_chart(fig_s, width='stretch')
 
     st.markdown("<div class='sec-head'><div class='sec-head-icon'>🔎</div>State Deep Dive<div class='sec-head-line'></div></div>", unsafe_allow_html=True)
     selected = st.selectbox("Select a State", state_df["state"].tolist(), label_visibility="collapsed")
@@ -691,7 +691,7 @@ with tab5:
             xaxis={**GRID, "color": "#475569", "zeroline": True, "zerolinecolor": "rgba(255,255,255,0.1)"},
             yaxis=dict(color="#e2e8f0"),
         )
-        st.plotly_chart(sec_fig, use_container_width=True, config={"displayModeBar": False})
+        st.plotly_chart(sec_fig, width='stretch', config={"displayModeBar": False})
 
         if result["reasons"]:
             st.markdown("<div class='sec-head'><div class='sec-head-icon'>🤖</div>AI Reasoning<div class='sec-head-line'></div></div>", unsafe_allow_html=True)
