@@ -9,3 +9,4 @@ scikit-learn
 feedparser
 deep-translator
 transformers
+torchvision
