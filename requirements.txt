@@ -8,3 +8,5 @@ torch
 scikit-learn
 feedparser
 deep-translator
+torchvision
+transformers
